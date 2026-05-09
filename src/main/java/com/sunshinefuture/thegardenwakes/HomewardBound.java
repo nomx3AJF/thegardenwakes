@@ -1,5 +1,6 @@
 package com.sunshinefuture.thegardenwakes;
 
+import com.sunshinefuture.thegardenwakes.Item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -35,39 +36,39 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(HomewardBound.MODID)
 public class HomewardBound {
 
-    // Define mod id in a common place for everything to reference
-    // i know its fucking dumb to have different names as well as mod ids but fuck ya chicken strips its for the aesthetic
+    // i know its fucking dumb to have different names here but fuck ya chicken strips its for the aesthetic
     public static final String MODID = "thegardenwakes";
 
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    // The constructor for the mod class is the first code that is run when your mod is loaded.
-    // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
+    // The constructor
     public HomewardBound(IEventBus modEventBus, ModContainer modContainer) {
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (HomewardBound) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
-        NeoForge.EVENT_BUS.register(this);
+        ModItems.register(modEventBus);
 
+
+
+        NeoForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
-
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
+
 
     private void commonSetup(FMLCommonSetupEvent event) {
 
     }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModItems.MOTIVECRYSTAL);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

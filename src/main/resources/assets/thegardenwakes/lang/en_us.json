@@ -1,13 +1,3 @@
 {
-  "itemGroup.thegardenwakes": "Example Mod Tab",
-  "block.thegardenwakes.example_block": "Example Block",
-  "item.thegardenwakes.example_item": "Example Item",
-
-  "thegardenwakes.configuration.title": "Homeward Bound Configs",
-  "thegardenwakes.configuration.section.thegardenwakes.common.toml": "Homeward Bound Configs",
-  "thegardenwakes.configuration.section.thegardenwakes.common.toml.title": "Homeward Bound Configs",
-  "thegardenwakes.configuration.items": "Item List",
-  "thegardenwakes.configuration.logDirtBlock": "Log Dirt Block",
-  "thegardenwakes.configuration.magicNumberIntroduction": "Magic Number Text",
-  "thegardenwakes.configuration.magicNumber": "Magic Number"
+  "item.thegardenwakes.motive_crystal": "Motive Crystal"
 }
