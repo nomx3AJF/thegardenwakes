@@ -1,6 +1,7 @@
 package com.sunshinefuture.thegardenwakes;
 
 import com.sunshinefuture.thegardenwakes.Item.ModItems;
+import com.sunshinefuture.thegardenwakes.block.ModBlocks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -49,6 +50,7 @@ public class HomewardBound {
         modEventBus.addListener(this::commonSetup);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
 
@@ -66,9 +68,19 @@ public class HomewardBound {
 
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+
+        //BUILDING BLOCKS
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.ROCK);
+            event.accept(ModBlocks.SHALE);
+        }
+
+        //FUNCTIONAL BLOCKS
         if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModItems.MOTIVECRYSTAL);
         }
+
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
