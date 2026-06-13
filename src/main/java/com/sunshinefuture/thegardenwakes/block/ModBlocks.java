@@ -24,7 +24,7 @@ public class ModBlocks {
 
     //my lovely helper functions yaaaaay
     private static <T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-        ModItems.ITEMS.registerItem(name, properties -> new BlockItem(block.get(), properties.useBlockDescriptionPrefix()));
+        ModItems.ITEMS.registerSimpleBlockItem(name, block);
     }
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function) {
