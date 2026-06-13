@@ -1,7 +1,7 @@
 package com.sunshinefuture.thegardenwakes.block;
 
 import com.sunshinefuture.thegardenwakes.HomewardBound;
-import com.sunshinefuture.thegardenwakes.Item.ModItems;
+import com.sunshinefuture.thegardenwakes.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;

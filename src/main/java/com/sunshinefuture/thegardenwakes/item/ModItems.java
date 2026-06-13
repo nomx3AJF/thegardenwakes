@@ -1,4 +1,4 @@
-package com.sunshinefuture.thegardenwakes.Item;
+package com.sunshinefuture.thegardenwakes.item;
 
 import com.sunshinefuture.thegardenwakes.HomewardBound;
 import net.minecraft.world.item.Item;

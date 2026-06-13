@@ -1,7 +1,7 @@
 package com.sunshinefuture.thegardenwakes.datagen;
 
 import com.sunshinefuture.thegardenwakes.HomewardBound;
-import com.sunshinefuture.thegardenwakes.Item.ModItems;
+import com.sunshinefuture.thegardenwakes.item.ModItems;
 import com.sunshinefuture.thegardenwakes.block.ModBlocks;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
